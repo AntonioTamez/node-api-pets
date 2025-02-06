@@ -6,42 +6,51 @@ class mascotasController{
 
     async create(req, res) {
         try {
-            const data = mascotasModel.create(req.body);
+            const data = await mascotasModel.create(req.body);
             res.status(201).json(data);
         } catch (error) {
-            res.status(500).send(e); 
+            res.status(500).send(error); 
         }
     }
 
     async update(req, res) {
         try {
-            res.status(201).json({status: 'update ok'});
+            const { id } = req.params;  
+            console.log('aaaa', id, 'cccc', req.body)
+            const data = await mascotasModel.update(id, req.body);            
+            res.status(201).json(data);
         } catch (error) {
-            res.status(500).send(e); 
+            console.log(error);
+            res.status(500).send(error); 
         }
     }
 
     async delete(req, res) {
         try {
-            res.status(201).json({status: 'delete ok'});
+            const { id } = req.params;  
+            const data = await mascotasModel.delete(id);             
+            res.status(206).json(data);
         } catch (error) {
-            res.status(500).send(e); 
+            res.status(500).send(error); 
         }
     }
 
     async getAll(req, res) {
         try {
-            res.status(201).json({status: 'getAll ok'});
+            const data = await mascotasModel.getAll();
+            res.status(201).json(data);
         } catch (error) {
-            res.status(500).send(e); 
+            res.status(500).send(error); 
         }
     }
 
     async getOne(req, res) {
         try {
-            res.status(201).json({status: 'getOne ok'});
+            const { id } = req.params;  
+            const data = await mascotasModel.getOne(id);            
+            res.status(201).json(data);
         } catch (error) {
-            res.status(500).send(e); 
+            res.status(500).send(error); 
         }
     }
 }
