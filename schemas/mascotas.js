@@ -8,19 +8,25 @@ const mascotaSchema = new mongoose.Schema(
         },
         tipo: {
             type: String,
-            required: true
+            required: true,
+            enum: [
+                'perro', 'gato', 'conejo'
+            ]
         },
         raza: {
             type: String, 
         },
         edad: {
-            type: Number
+            type: Number,
+            min: [0, 'La edad no puede ser menor a cero'],
+            max: [30, 'La edad no parece correcta']
         },        
         descripcion: {
             type: String
         },
         adoptado: {
             type: Boolean, 
+            default: false
         }
     }, { timestamps: true }
 )

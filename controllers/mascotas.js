@@ -16,7 +16,6 @@ class mascotasController{
     async update(req, res) {
         try {
             const { id } = req.params;  
-            console.log('aaaa', id, 'cccc', req.body)
             const data = await mascotasModel.update(id, req.body);            
             res.status(201).json(data);
         } catch (error) {
