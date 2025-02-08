@@ -1,5 +1,6 @@
+import { generarToken } from '../helpers/autenticacion.js';
 import usuariosModel from '../models/usuarios.js';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt';
 
 class usuariosController{
 
@@ -50,10 +51,12 @@ class usuariosController{
                 return res.status(400).json({ error: 'Contraseña incorrecta' });
             }
 
-            // Aquí podrías generar un token JWT si lo necesitas
+            const token = generarToken(email);  
             
-            const { clave: _, ...usuarioSinClave } = usuario.toObject();
-            res.status(200).json(usuarioSinClave);
+            //const { clave: _, ...usuarioSinClave } = usuario.toObject();
+            //res.status(200).json(usuarioSinClave);
+
+            return res.status(200).json({ msg: 'Usuario autenticado', token });
 
         } catch (error) {
             console.error('Error en login:', error);
