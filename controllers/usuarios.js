@@ -66,6 +66,16 @@ class usuariosController{
             });
         }
     }
+
+    async profile(req, res) {
+        try {
+            console.log(req.emailConectado)
+            const data = await usuariosModel.getOne({ email: req.emailConectado });
+            res.status(201).json(data);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    }
 }
 
 export default new usuariosController();
