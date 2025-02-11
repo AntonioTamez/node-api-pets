@@ -12,7 +12,7 @@ const route = express.Router();
 
 /**
  * @swagger
- * /api/mascotas:
+ * /mascotas:
  *   post:
  *     summary: Crea una nueva mascota
  *     description: Crea una nueva mascota en la base de datos
@@ -52,7 +52,7 @@ route.post('/', mascotasController.create);
 
 /**
  * @swagger
- * /api/mascotas/{id}:
+ * /mascotas/{id}:
  *   get:
  *     summary: Obtiene una mascota por ID
  *     description: Obtiene una mascota por su ID en la base de datos
@@ -83,7 +83,7 @@ route.get('/:id', mascotasController.getOne);
 
 /**
  * @swagger
- * /api/mascotas:
+ * /mascotas:
  *   get:
  *     summary: Obtiene todas las mascotas
  *     description: Obtiene todas las mascotas en la base de datos
@@ -110,7 +110,7 @@ route.get('/', mascotasController.getAll);
 
 /**
  * @swagger
- * /api/mascotas/{id}:
+ * /mascotas/{id}:
  *   put:
  *     summary: Actualiza una mascota
  *     description: Actualiza una mascota en la base de datos
@@ -153,7 +153,7 @@ route.put('/:id', verificarToken, mascotasController.update);
 
 /**
  * @swagger
- * /api/mascotas/{id}:
+ * /mascotas/{id}:
  *   delete:
  *     summary: Elimina una mascota
  *     description: Elimina una mascota en la base de datos
