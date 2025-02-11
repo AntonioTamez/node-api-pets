@@ -4,11 +4,16 @@ import routesMascotas from './routes/mascotas.js';
 import routeUsuarios from './routes/usuarios.js';
 import bodyParser from 'body-parser';
 import dbClient from './config/dbClient.js';
+import swaggerUI from 'swagger-ui-express'
+import specs from './swaggerConfig.js'; 
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.use("/api-docs", swaggerUI.setup(specs));
+
 
 app.use('/pets', routesMascotas);
 app.use('/users', routeUsuarios);
