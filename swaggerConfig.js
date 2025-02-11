@@ -1,10 +1,11 @@
 import swaggerJsdoc from "swagger-jsdoc";
+import swaggerUI from 'swagger-ui-express'
 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Mi API con Swagger",
+      title: "API de Mascotas",
       version: "1.0.0",
       description: "Documentación de la API",
     },
@@ -14,8 +15,7 @@ const options = {
       },
     ],
   },
-  apis: ["./routes/*.js"], // Aquí defines dónde están tus rutas documentadas
-  src: './'
+  apis: ["./routes/*.js"], // Aquí defines dónde están tus rutas documentadas 
 };
 
 const specs = swaggerJsdoc(options);
