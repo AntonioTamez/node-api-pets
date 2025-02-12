@@ -3,13 +3,17 @@
 ## Descripción
 API RESTful desarrollada con Node.js y Express que permite gestionar un sistema de registro de mascotas y usuarios. La aplicación utiliza MongoDB como base de datos y proporciona endpoints para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) tanto para mascotas como para usuarios.
 
+
+###  [View Demo](https://node-api-pets.onrender.com/api-docs/)
+
+### Deploy realizado en [render.com](https://render.com/)
+
 ## Tecnologías usadas
 [MongoDB](https://www.mongodb.com/es)
 [Express.js](https://expressjs.com/)
 [Node.js](https://nodejs.org/es)
 [Mongoose](https://mongoosejs.com/)
 
-##  [View Demo](https://node-api-pets.onrender.com/api-docs/)
 
 ## Características Principales
 
@@ -52,23 +56,14 @@ API RESTful desarrollada con Node.js y Express que permite gestionar un sistema 
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/tu-usuario/node-api-pets.git
+git clone https://github.com/AntonioTamez/node-api-pets.git
 cd node-api-pets
 ```
 2. Instalar dependencias:
 ```bash
 npm install
 ```
-3. Instalar paquetes específicos:
-```bash
-npm install express mongoose dotenv cors bcryptjs
-npm install nodemon -D
-```
-4. Crear archivo .env en la raíz del proyecto:
-```bash
-PORT=3000
-MONGODB_URI=mongodb://localhost:27017/pets_db
-```
+
 ## Estructura del Proyecto
 
 ```
@@ -105,6 +100,23 @@ node-api-pets/
     "test": "jest"
   }
 }
+```
+
+## Paquetes instalados
+```
+npm i express
+
+npm i body-parser
+
+npm i dotenv
+
+npm i mongodb
+
+npm i mongoose
+
+npm i bcrypt
+
+npm install jsonwebtoken
 ```
 
 ## Comandos
